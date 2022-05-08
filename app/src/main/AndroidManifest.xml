@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.dell.cprograming">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplasScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".TutorialPage" />
+        <activity android:name=".CodePage" />
+        <activity android:name=".QuizePage" />
+        <activity android:name=".DisplayData" />
+        <activity android:name=".questionShow" />
+        <activity android:name=".highScore" />
+        <activity android:name=".MainCodePagActivity" />
+        <activity android:name=".WebView" />
+        <activity android:name=".aboutPage" />
+        <activity android:name=".FeedbackActivity" />
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/actionss" />
+    </application>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

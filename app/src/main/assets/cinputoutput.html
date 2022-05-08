@@ -1,0 +1,340 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="fontawesome.min.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="stylefile.css" />
+
+</head>
+<body >
+<div class="dpd">
+<h1>C Input Output (I/O)</h1>
+<p>
+    In this tutorial, you will learn to use <span class="templet" id="code">scanf()</span> function to take input from the user, and <span class="templet" id="code">printf()</span> function to display output to the user.
+</p>
+<h2>C Output</h2>
+<p>
+    In C programming, <span class="templet" id="code">printf()</span>  is one of the main output function. The function sends formatted output to the screen. For example,
+</p>
+<h3>Example 1: C Output</h3>
+<pre id="code" class="codetem">
+    #include< stdio.h >
+    int main(){
+        // Display the string inside quotations
+        printf("C Programming");
+        return 0;
+    }
+</pre>
+
+    <h3>Output</h3>
+
+    <div class="output">C Programming</div>
+    <p>How does this program work?</p>
+
+    <p>All valid C programs must contain the <span class="templet" id="code">main()</span> function. The code execution begins from the start of the <span class="templet" id="code">main()</span> function.
+        The <span class="templet" id="code">printf()</span> is a library function to send formatted output to the screen. The function prints the string inside quotations.
+        To use <span class="templet" id="code">printf()</span> in our program, we need to include <span class="headerfile templet">stdio.h</span> header file using the <span class="templet" id="code">#include < stdio.h > </span><br> statement.
+        The <span class="templet" id="code">return 0;</span> statement inside the <span class="templet" id="code">main()</span> function is the "Exit status" of the program. It's optional. </p>
+<h3>Example 2: Integer Output</h3>
+<pre id="code" class="codetem">
+    #include< stdio.h >
+    int main(){
+        int testInteger = 5;
+        printf("Number = %d\n",testInteger);
+        return 0;
+    }
+</pre>
+ <h3>Output</h3>
+
+        <div class="output">Number = 5</div>
+<br><br>
+<p>
+    We use <span class="string templet">%d</span> format specifier to print int types. Here, the <span class="templet string">%d</span> inside the quotations will be replaced by the value of testInteger.
+</p>
+        <h3>Example 3: float and double Output</h3>
+<pre id="code" class="codetem">
+    int main(){
+        float number1 = 13.5;
+        float number2 = 12.4;
+        printf("number1 = %f\n",number1);
+        printf("number2 = %f\n",number2);
+        return 0;
+    }
+</pre>
+
+
+        <h3>Output</h3>
+
+        <div class="output">
+            <span>number1 = 13.500000</span><br>
+            <span>number2 = 12.400000</span>
+        </div>
+<br><br>
+       <p> To print <span class="templet keyword">float</span>, we use <span class="templet string">%f</span> format specifier. Similarly, we use <span class="templet string">%lf</span> to print <span class="templet keyword">double</span> values.</p>
+
+        <h3>Example 4: Print Characters</h3>
+<pre id="code" class="codetem">
+    #include< stdio.h >
+    int main(){
+        char chr = 'a';
+        printf("charecter = %c\n",chr);
+        retuen 0;
+    }
+</pre>
+
+ <h3>Output</h3>
+
+  <div class="output">character = a</div>
+
+<br><br>
+
+<p> To print <span class="templet keyword">char</span>, we use <span class="templet string">%c</span> format specifier.</p>
+
+        <h2>C Input</h2>
+<p>
+    In C programming, <span class="templet" id="code">scanf()</span> is one of the commonly used function to take input from the user. The <span class="templet" id="code">scanf()</span> function reads formatted input from the standard input such as keyboards.
+</p>
+        <h3>Example 5: Integer Input/Output</h3>
+<pre class="codetem" id="code">
+    #include < stdio.h>
+    int main(){
+        int testInteger;
+        printf("Enter an integer: ",chr);
+        scanf("%d",&testInteger);
+        printf("Number = %d\n",testInteger);
+
+        return 0;
+    }
+</pre>
+
+
+        <h3>Output</h3>
+
+        <div class="output">
+            <span>Enter an integer: 4</span><br>
+            <span>Number = 4</span>
+        </div>
+<br><br>
+<p>
+    Here, we have used <span class="templet string">%d</span> format specifier inside the <span class="templet" id="code">scanf()</span> function to take int input from the user. When the user enters an integer, it is stored in the <span class="templet nocolor">testInteger</span> variable.
+</p>
+<p>
+    Notice, that we have used <span class="templet" id="code">&testInteger</span> inside <span class="templet" id="code">scanf()</span>. It is because <span class="templet" id="code">&testInteger</span> gets the address of <span class="templet nocolor">testInteger</span>, and the value entered by the user is stored in that address.
+</p>
+        <h3>Example 6: Float and Double Input/Output</h3>
+
+<pre id="code" class="codetem">
+    #include < stdio.h >
+    int main()
+    {
+        float num1;
+        double num2;
+
+        printf("Enter a number: ");
+        scanf("%f",&num1);
+        printf("Enter another number: ");
+        scanf("%f",&num2);
+
+        printf("num1 = %f\n",num1);
+        printf("num2 = %f\n",num2);
+
+        return 0;
+    }
+
+
+</pre>
+
+
+        <h3>Output</h3>
+
+        <div class="output">
+            <span>Enter a number: 12.523</span><br>
+            <span>Enter another number: 10.2</span><br>
+            <span>num1 = 12.523000</span><br>
+            <span>num2 = 10.200000</span>
+        </div>
+<br><br>
+<p>
+    We use <span class="templet string">%f</span> and <span class="templet string">%lf</span> format specifier for <span class="templet keyword">float</span> and <span class="templet keyword">double</span> respectively.
+</p>
+        <h3>Example 7: C Character I/O</h3>
+
+<pre id="code" class="codetem">
+    #include < stdio.h >
+    int main()
+    {
+
+        char chr;
+
+        printf("Enter a character: ");
+        scanf("%c",&chr);
+
+        printf("You entered %c.",chr);
+
+        return 0;
+    }
+</pre>
+
+        <h3>Output</h3>
+
+        <div class="output">
+            <span>Enter a character: g</span><br>
+            <span>You entered g</span>
+        </div>
+<br><br>
+<p>
+    When a character is entered by the user in the above program, the character itself is not stored. Instead, an integer value (ASCII value) is stored.
+</p>
+<p>
+    And when we display that value using <span class="templet string">%c</span> text format, the entered character is displayed. If we use <span class="templet string">%d</span> to display the character, it's ASCII value is printed.
+</p>
+        <h3>Example 8: ASCII Value</h3>
+
+<pre class="codetem" id="code">
+   #include < stdio.h >
+    int main(){
+
+        char chr;
+        printf("Enter a character: ");
+        scanf("%c",&chr);
+        // When %c is used, a character is displayed
+        printf("You entered %c.\n",chr);
+        // When %d is used, ASCII value is displayed
+        printf("ASCII value is %d.\n",chr);
+
+        return 0;
+    }
+</pre>
+
+        <h3>Output</h3>
+
+       <div class="output">
+           <span>Enter a character: g</span><br>
+           <span>You entered g.</span><br>
+           <span>ASCII value is 103.</span>
+       </div>
+<br><br>
+      <h3>I/O Multiple Values</h3>
+        <p>Here's how you can take multiple inputs from the user and display them.</p>
+<pre class="codetem" id="code">
+    #include < stdio.h >
+    int main(){
+
+        int a;
+        float b;
+
+        printf("Enter integer and then a float: ");
+        // Taking multiple inputs
+        scanf("%d%f",&a,&b);
+        printf("You entered %d and %f\n",a,b);
+
+        return 0;
+    }
+</pre>
+        <h3>Output</h3>
+
+        <div class="output">
+            <span>Enter integer and then a float: -3</span><br>
+            <span>3.4</span><br>
+            <span>You entered -3 and 3.400000</span><br>
+        </div>
+<br><br>
+        <h3>Format Specifiers for I/O</h3>
+       <p> As you can see from the above examples, we use</p>
+       <span> <span class="templet string">%d</span> for <span class="templet keyword">int</span> </span><br>
+       <span> <span class="templet string">%f</span> for <span class="templet keyword">float</span> </span><br>
+       <span> <span class="templet string">%lf</span> for <span class="templet keyword">double</span> </span><br>
+       <span> <span class="templet string">%c</span> for <span class="templet keyword">char</span> </span><br>
+
+
+        <p> As you can see from the above examples, we use</p>
+         <div>
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Data Type</th>
+                     <th>Format Specifier</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td><span class="templet keyword">int</span></td>
+                     <td><span class="templet string">%d</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">char</span></td>
+                     <td><span class="templet string">%c</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">float</span></td>
+                     <td><span class="templet string">%f</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">double</span></td>
+                     <td><span class="templet string">%lf</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">short int</span></td>
+                     <td><span class="templet string">%hd</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">unsigned int</span></td>
+                     <td><span class="templet string">%u</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">long int</span></td>
+                     <td><span class="templet string">%li</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">long long int</span></td>
+                     <td><span class="templet string">%lli</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">unsigned long int</span></td>
+                     <td><span class="templet string">%lu</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">unsigned long long int</span></td>
+                     <td><span class="templet string">%llu</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">signed char</span></td>
+                     <td><span class="templet string">%c</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">unsigned char</span></td>
+                     <td><span class="templet string">%c</span></td>
+                 </tr>
+                 <tr>
+                     <td><span class="templet keyword">long double</span></td>
+                     <td><span class="templet string">%Lf</span></td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+<br>
+</div>
+<div class="footer">
+    <span>Develop By Mahmodul Hassan Shawon</span><br>
+    <span style="font-size: 10px;">Email: shawonmahmodul12@gmail.com</span>
+    <div class="mt-2">
+        <a href="https://www.facebook.com/profile.php?id=100009231404662"class="mr-1">	<i class="fab"><img class="fimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEU6VZ////82Up4zUJ1UbKx4ibswTpyMmsQ5V6EtTJupss8nSJnN0+WVosgqSpo4U56eqcyDksDj5vBwgbb3+PxFXqNabqt9jb3S2OhidbC9xdy3v9l0hLjZ3etLY6bq7fTEyt4dQpdJYqekrs2uttK97JEgAAADFUlEQVR4nO3c2XLiMBBAUUZmM3IsFsNgSIAk/P83TsLzjCNbI3c3de9rqlw+BV7VZDIhIiIiIiIiIiIiIiIiIlJeCM4VxbzsrJDey8G50s/3h91ss3jp7LdJYii8262rbfPr545eem/753y9qWJwjypzwqJuT7E6i0JX7459fOaEvn3r5zMmLPy5r8+W0L9Gn15MCkO9GuAzJHSh9xFoS1hcrsOAVoTzdsghaEhYTAcDbQjdfjjQhDAshx6DRoShrhKAFoR+nQI0ICzaJKABYZlyEFoQ1p9pQPVCd0m4UJgQ+lsiULvQXVKB2oW+1ysZg8KwTAYqF5ZpF3sDQr99cqFLvJ3RL0y+2usXDnw1Y0YYUh58TQiL3X8Aql57Kvschs3xdF/9pftC8fphj3vSalZ6X5tbA/axJ5rtzhdBem+HVEeeaKq55s+po1DHAW/vJj+/yfdifdxX1OYX9LuwjxIejH5Fv3LTGOBJ8eXup+KEH056P4cXJby+S+9mQlHCUy29mwlFCddz6d1MKEq4sXsmjRTOEGoOIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQR27+78qYucRX37GFR7Jrb65ddBQz1Hbv2sCjpSixvEcgEitlhcN+cNenRnZxagThm+wK6ghC4TXiEYSr8tmFwstvIwhb2XX+EYR72St+fmEj6htDuBW+a8svPArPauQXnp9e+CI8jZJfKP38mF8ofDnML2wuwsOn2YVX6ena7MKt9PRpduHt6YUr6eHM7MKF9HBmduGr9OvU7MKp9BR4bmEjDcwulJ9zzy2U/+1hbqH0s1N+4afsq8QRhPKT/LmFB+kb7+xC6Tua7ELhdacRhOLPTtmFCv7ZQOY14LP4xWISlh2FqFkM17UF8VPpF7Hjb3HTJl2nSwXAzp5jnqYrhAj1hxCh/hAi1B9ChPpDiFB/CBHqDyFC/SFEqD+ECPWHEKH+ECLUH0KE+kOIUH8IEeoPIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQfwgR6g8hQv0hRKg/hAj1hxCh/hAi1B9ChD36A+1ASVvVoq0WAAAAAElFTkSuQmCC"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jack-jisan-64296b170/" class="mr-1">
+            <i class="fab"><img class="fimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEUAd7f///8AcrUAbrMAdbbK3Ou30uaMttcAc7U/jcJ7rdKGsNN0pM2vy+IAbLIAa7L3+/0Le7ns9Pnh7fVZmcjY5/Kox+Aafrvy+fxIkcTA1+mbwNwzh7+0z+Td6vNspM2UvNrR4u9insoAZrAjhL6yZ374AAAHJklEQVR4nO2d6ZaqvBKGQxIxtJsgiuDc6uH+r/GAQ7fSDEVClMqX91+v1WAeMleqKsR70WI7TfKYYFWcJ9Pt4hWJPP9x2EhGBf90OTXEBWVy4zcQpjETny7hIBIyDmsIjzn7dMkGlNwvq4ShtKP+HhLs8Ep4ijD3vjrxaPdMeIo+XSADuiNeCUMbAQvEw4NwKW1rojdxtrgT7u0aZH7FgxthatM08SoZXgntbKJX8bgkDO2twqIS/YIwsLUXlhKJRxby06UwKrYmvs2NtCDckhn9dCGMip5IYnM3LDriN8ktnixIOekTvCYLkHj26RI4ORkQv+rTpTAkzqmM6D4I9jxCbnWsFWci2Z3XN+PHfJVeiCXGx7tEtA/nr8Zkb7uJ7GGUm4lXo9XFEhudENs6vlLnzIZ1LdtU2+ezvvFvv+Ssha9Qit1UF6XtgMWIg9vcynZdgJ53wIzIvroBPW+H11AgAgig512wjqg3uzhA80+XVFWsc5R5yMc5Z/AMCughNbv+nKMCNMFYiZzDAT0Po0mLTvsQ7hAOp/LYh3CBcNrvMc6U2qNrpuK7HyG+8wEKngxvOqBburHabX2zVugI+w00xVCDjjACrkkfWqOzL/Yl9Ag2QrnshkJO2LMfztEZ+/uOpfhGGhp2Uz3rjI+ww4pYFT7XI77vR/iNbw/M1r0I0Q2lBWGvjnhGuMkXmz6EX+i2FqTfnD9Ht2Yr1WeHeMJYhX2WNXOEvbAU1KhfTBU4qxB28lRqi7QKCbSdrinGYeYmHkOmfdTxDDxrO8S/KcDaCW8SWcdef44csEDkqzbAZYa5id4lWw4w0Hti3MTycz3fMcA7TbyK17p9rRKbIk+FzKcv/fF42tvEV4pTSZNp6G+3fji9FH9Y0QEr4pxSVoha6D/r5OTkZKd4OXgjtMJ2SxQzkowiSuIszzMaRZIZD+8QzWo+UuMtTzUuhiiTWXJKJ8enLdt6OQlPl1wyU7s0TtnmX6MSWn8gw1ne/NC/S1zzVPFD8Vc1RdCvFv4sNgLJ6a59l3+o6yo06bAmT6pPcZmdOo1Cq2k8/GJYnrt+dvGXkF66HvIWL7GdQibAA1k/GJgRcjzz91AmBhR1+9RQo6TVjlD5uWE3pSDntk3lq9IT5Kkff00aN8bk1Mvnw/VHCvPVr/wgzAXgcvsuPOrpQFdoPlzAFczHtOrSBiO8ncdx5nf/a91PDoQII6wmZuhBKHhft527jmSYAcc0Ie+yxjZrng+CaJhQgA4NjCKaJYSdijQjDrEsN0vY17GsquUA1jCjhP9TGkWfNUBgoEnCb9Bc2y59DxCThL3COZqkHchiknAQrXTb6egJtX0kxk+o60MwfkJdXyUEhJr+ZggIvalWJWIg1Euqh4HQ08rIhoJQy+cMBaGWAzYOQp1ZHwfhViMQAgehp7E4RUKoMZoiIdQIlX8v4XyxXC5VjG8r9fnifYTLNIkpux6GBrO+z2tEBr6LcLKJqLhPa5xTRkAnH79STzzyHsJFUs1tx2m/4ED1ZABvIfTr8hNy2X0G+Sv10MB3EDZdrkH33S7mD6knA3gD4a5xuqbw0LK58pxvntBvKRss09hVyotv44SLVkNSBH5R9Rh6PITtJeM59D3KMbqmCQ8dixFwqiplY41pwqyj+4DDrcOREnZPYxLohqJ8A4Jhwq4qhKfjUg60Nkt47p7FoFnxluMkhJz+AZPIKGflMEsIubYA6G6jnP/HKCFo3wrsiMo7RKOEINsDNO9BPEbCBFQo4FCjepGFUUJQ1+EUtodSPdA3SQg8MwIOpqpJDU0STmADPDujJUxhS0lgkw9GSAjcDjCYA7HqBtG4fymAEDblYyaEmRUdoSP8JCHMkIGZEDbSqB4h4iFU9TTFQ6h6NjMGQthI4wgdoSN0hI7QETpCR+gIHaEjdISO0BE6QkfoCB2hI3SEjtAROkJH6AgdoSN0hI7QETpCR+gIHaEjdISO0BE6QkfoCB2hI4QIdiXwn7z6oEAeYBoECrvt9Z+iJzvnkLdXo6pgF88DYyJ5AiJUjbAEfcE/CeG4AERF+tD4ctDl2coZBwiJOlvc8W96EkDwLjzbOM+7v5dW7nL51RrEuT7VfT267xhsgMGHV4ms6yunehn2qcyDRu2j+q/HWdz8UBCwXt+cM972sn2/t9X+QouUHupdoNaX2Xitl9N/S8oTJRJlJP90EQwrJ1qZoscvkRD1lIooRGdEYz2HQWxL9FK2j15yQTRymyJQsQMgXmpzM2VhQehZvazzSkKLK5GlV0L9C4XGKlEmXSwJj5YOp/xq/iDXHbL+3V5jVHQ1Q14JvZmNtRjdUoLfCL2ZdbXI74APQi+Vdg03Qj5yvjwIvWM21NWlIxBn+Y+N9YewvPvKEkbBxJMZ+4nQm6eBZC2XpSMQ54LJIH02pT4TFlqEX5sMklV0nIqzzdehYr/+PyJejj+qK5H5AAAAAElFTkSuQmCC"></i>
+        </a><br><br><br>
+        <span>Learn with C programing</span><br>
+        <span>Happy coding</span>
+    </div>
+</div>
+<script src="javascript.js"></script>
+</body>
+</html>

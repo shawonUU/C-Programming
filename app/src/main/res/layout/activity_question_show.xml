@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainlayought"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF803118"
+    android:orientation="vertical"
+    android:weightSum="24"
+    tools:context=".questionShow">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:weightSum="20">
+
+        <ImageButton
+            android:id="@+id/backButtonId"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="17"
+            android:background="@color/colorPrimary"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:weightSum="20">
+
+            <ImageButton
+                android:id="@+id/settingButtonId"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/setting" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/settingLayought"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:background="#710A0A"
+        android:padding="10dp"
+        android:weightSum="5">
+        <Switch
+            android:id="@+id/soundSwitchId"
+            android:layout_width="wrap_content"
+            android:text="Sound"
+            android:textSize="12dp"
+            android:textColor="#fff"
+            android:layout_height="match_parent"/>
+        <Switch
+            android:id="@+id/vibrationSwitchId"
+            android:layout_width="wrap_content"
+            android:text="Vibration"
+            android:textSize="12dp"
+            android:layout_marginLeft="3dp"
+            android:textColor="#fff"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/saveChangBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffff"
+            android:background="@drawable/button_shape"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            android:text="Save Change"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/timerLayought"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="5"
+        android:background="#710A0A">
+
+        <TextView
+            android:id="@+id/scoreViewId"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:textColor="#ffff"
+            android:text="Score: 10000"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:textSize="18dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:background="#710A0A">
+
+            <Button
+                android:id="@+id/SaveScoreButtonId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffff"
+                android:text="Save Score"
+                android:background="@drawable/button_shape"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:textSize="10dp" />
+            <TextView
+                android:id="@+id/timerId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="#f50b0b"
+                android:text="60"
+                android:layout_gravity="center"
+                android:background="@drawable/background_circul"
+                android:padding="5dp"
+                android:textSize="30dp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:padding="3dp">
+
+        <TextView
+            android:id="@+id/questionViewId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#ffff"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+
+    <WebView
+        android:id="@+id/webViewiD"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:layout_weight="5"/>
+    <TextView
+        android:id="@+id/imageViewdff"
+        android:layout_width="match_parent"
+        android:text="Code"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:background="#353434"
+        android:visibility="gone"
+        android:layout_height="0dp"
+        android:layout_weight="5"/>
+
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingBottom="3dp"
+        android:fillViewport="true">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/option1Id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"
+                android:checked="false"
+                android:text="  Male"
+                android:textColor="#ffff"
+                android:textSize="17dp" />
+
+            <RadioButton
+                android:id="@+id/option2Id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:checked="false"
+                android:text="  "
+                android:textColor="#ffff"
+                android:textSize="17dp" />
+
+            <RadioButton
+                android:id="@+id/option3Id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:checked="false"
+                android:text="  Male"
+                android:textColor="#ffff"
+                android:textSize="17dp" />
+
+            <RadioButton
+                android:id="@+id/option4Id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:checked="false"
+                android:text="   "
+                android:textColor="#ffffff"
+                android:textSize="17dp" />
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/imageFckViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:layout_weight="5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="3"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/continuebuttonId"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:background="@drawable/button_red"
+            android:padding="5dp"
+            android:text="Skip"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/submitebuttonId"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:background="@drawable/button_shape"
+            android:padding="5dp"
+            android:text="Submit"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

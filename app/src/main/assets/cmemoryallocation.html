@@ -1,0 +1,210 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="fontawesome.min.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="stylefile.css" />
+
+    <title>Shawon</title>
+</head>
+<body >
+<div class="dpd">
+<h1>C Dynamic Memory Allocation</h1>
+<p>In this tutorial, you'll learn to dynamically allocate memory in your C program using standard library functions: <span class="templet">malloc()</span>, <span class="templet">calloc()</span>, <span class="templet">free()</span> and <span class="templet">realloc()</span>.
+</p>
+<p>As you know, an array is a collection of a fixed number of values. Once the size of an array is declared, you cannot change it.</p>
+
+<p>Sometimes the size of the array you declared may be insufficient. To solve this issue, you can allocate memory manually during run-time. This is known as dynamic memory allocation in C programming.
+</p>
+<p>To allocate memory dynamically, library functions are <span class="templet">malloc()</span>, <span class="templet">calloc()</span>, <span class="templet">realloc()</span> and <span class="templet">free()</span> are used. These functions are defined in the <span class="templet">< stdlib.h ></span> header file.
+</p>
+<hr>
+    <h2>C malloc()</h2>
+    <p>The name "malloc" stands for memory allocation.</p>
+
+<p>    The <span class="templet">malloc()</span> function reserves a block of memory of the specified number of bytes. And, it returns a pointer of <span class="templet">void</span> which can be casted into pointers of any form.
+</p>
+<hr>
+    <h2>Syntax of malloc()</h2>
+    <pre id="code"class="templet">ptr = (castType*) malloc(size);</pre>
+    <h2>Example</h2>
+
+<pre id="code"class="templet">ptr = (float*) malloc(100 * sizeof(float));</pre>
+<p>    The above statement allocates 400 bytes of memory. It's because the size of <span id="code" class="templet">float</span> is 4 bytes. And, the pointer <span id="code"class="templet">ptr</span> holds the address of the first byte in the allocated memory.
+</p>
+
+    <p>The expression results in a <span class="templet">NULL</span> pointer if the memory cannot be allocated.</p>
+<hr>
+   <h2> C calloc()</h2>
+    <p>The name "calloc" stands for contiguous allocation.</p>
+
+<p>    The <span class="templet">malloc()</span> function allocates memory and leaves the memory uninitialized. Whereas, the <span class="templet">calloc()</span>calloc() function allocates memory and initializes all bits to zero.
+</p>
+<hr>
+    <h2>Syntax of calloc()</h2>
+    <p id="code" class="templet">ptr = (castType*)calloc(n, size);</p>
+    <h2>Example:</h2>
+
+<pre id="code" class="templet">ptr = (float*) calloc(25, sizeof(float));</pre>
+    <p>The above statement allocates contiguous space in memory for 25 elements of type <span id="code" class="templet">float</span>.</p>
+<hr>
+    <h2>C free()</h2>
+<p>    Dynamically allocated memory created with either <span class="templet">calloc()</span> or <span class="templet">malloc()</span> doesn't get freed on their own. You must explicitly use<span class="templet">free()</span> to release the space.
+</p>
+<hr>
+    <h2>Syntax of free()</h2>
+    <p id="code" class="templet">free(ptr);</p>
+    <p>This statement frees the space allocated in the memory pointed by <span id="code" class="templet">ptr</span>.</p>
+<hr>
+    <h2>Example 1: malloc() and free()</h2>
+    <pre id="code" class="codetem">
+        // Program to calculate the sum of n numbers entered by the user
+
+    #include < stdio.h >
+        #include < stdlib.h >
+
+        int main()
+        {
+            int n, i, *ptr, sum = 0;
+
+            printf("Enter number of elements: ");
+            scanf("%d", &n);
+
+            ptr = (int*) malloc(n * sizeof(int));
+
+            // if memory cannot be allocated
+            if(ptr == NULL)
+            {
+                printf("Error! memory not allocated.");
+                exit(0);
+            }
+
+            printf("Enter elements: ");
+            for(i = 0; i < n; ++i)
+            {
+                scanf("%d", ptr + i);
+                sum += *(ptr + i);
+            }
+
+            printf("Sum = %d", sum);
+
+            // deallocating the memory
+            free(ptr);
+
+            return 0;
+        }
+    </pre>
+        <p>Here, we have dynamically allocated the memory for <span id="code" class="templet">n</span> number of <span id="code" class="templet">int</span>.</p>
+<hr>
+       <h2> Example 2: calloc() and free()</h2>
+        <pre id="code" class="codetem">
+        // Program to calculate the sum of n numbers entered by the user
+
+        #include < stdio.h >
+        #include < stdlib.h >
+
+        int main()
+        {
+            int n, i, *ptr, sum = 0;
+            printf("Enter number of elements: ");
+            scanf("%d", &n);
+
+            ptr = (int*) calloc(n, sizeof(int));
+            if(ptr == NULL)
+            {
+                printf("Error! memory not allocated.");
+                exit(0);
+            }
+
+            printf("Enter elements: ");
+            for(i = 0; i < n; ++i)
+            {
+                scanf("%d", ptr + i);
+                sum += *(ptr + i);
+            }
+
+            printf("Sum = %d", sum);
+            free(ptr);
+            return 0;
+        }
+        </pre>
+<hr>
+       <h2> C realloc()</h2>
+<p>        If the dynamically allocated memory is insufficient or more than required, you can change the size of previously allocated memory using the <span class="templet">realloc()</span> function.
+</p>
+<hr>
+        <h2>Syntax of realloc()</h2>
+        <p id="code" class="templet">ptr = realloc(ptr, x);</p>
+        <p>Here, <span id="code" class="templet">ptr</span> is reallocated with a new size <span id="code" class="templet">x</span>.</p>
+<hr>
+        <h2>Example 3: realloc()</h2>
+        <pre id="code" class="codetem">
+        #include < stdio.h >
+        #include < stdlib.h >
+
+        int main()
+        {
+            int *ptr, i , n1, n2;
+            printf("Enter size: ");
+            scanf("%d", &n1);
+
+            ptr = (int*) malloc(n1 * sizeof(int));
+
+            printf("Addresses of previously allocated memory: ");
+            for(i = 0; i < n1; ++i)
+            printf("%u\n",ptr + i);
+
+            printf("\nEnter the new size: ");
+            scanf("%d", &n2);
+
+            // rellocating the memory
+            ptr = realloc(ptr, n2 * sizeof(int));
+
+            printf("Addresses of newly allocated memory: ");
+            for(i = 0; i < n2; ++i)
+            printf("%u\n", ptr + i);
+
+            free(ptr);
+
+            return 0;
+        }
+        </pre>
+        <h3>When you run the program, the output will be:</h3>
+
+        <pre class="output">
+        Enter size: 2
+        Addresses of previously allocated memory:26855472
+        26855476
+
+        Enter the new size: 4
+        Addresses of newly allocated memory:26855472
+        26855476
+        26855480
+        26855484
+        </pre>
+<hr>
+</div>
+<div class="footer">
+    <span>Develop By Mahmodul Hassan Shawon</span><br>
+    <span style="font-size: 10px;">Email: shawonmahmodul12@gmail.com</span>
+    <div class="mt-2">
+        <a href="https://www.facebook.com/profile.php?id=100009231404662"class="mr-1">	<i class="fab"><img class="fimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEU6VZ////82Up4zUJ1UbKx4ibswTpyMmsQ5V6EtTJupss8nSJnN0+WVosgqSpo4U56eqcyDksDj5vBwgbb3+PxFXqNabqt9jb3S2OhidbC9xdy3v9l0hLjZ3etLY6bq7fTEyt4dQpdJYqekrs2uttK97JEgAAADFUlEQVR4nO3c2XLiMBBAUUZmM3IsFsNgSIAk/P83TsLzjCNbI3c3de9rqlw+BV7VZDIhIiIiIiIiIiIiIiIiIlJeCM4VxbzsrJDey8G50s/3h91ss3jp7LdJYii8262rbfPr545eem/753y9qWJwjypzwqJuT7E6i0JX7459fOaEvn3r5zMmLPy5r8+W0L9Gn15MCkO9GuAzJHSh9xFoS1hcrsOAVoTzdsghaEhYTAcDbQjdfjjQhDAshx6DRoShrhKAFoR+nQI0ICzaJKABYZlyEFoQ1p9pQPVCd0m4UJgQ+lsiULvQXVKB2oW+1ysZg8KwTAYqF5ZpF3sDQr99cqFLvJ3RL0y+2usXDnw1Y0YYUh58TQiL3X8Aql57Kvschs3xdF/9pftC8fphj3vSalZ6X5tbA/axJ5rtzhdBem+HVEeeaKq55s+po1DHAW/vJj+/yfdifdxX1OYX9LuwjxIejH5Fv3LTGOBJ8eXup+KEH056P4cXJby+S+9mQlHCUy29mwlFCddz6d1MKEq4sXsmjRTOEGoOIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQR27+78qYucRX37GFR7Jrb65ddBQz1Hbv2sCjpSixvEcgEitlhcN+cNenRnZxagThm+wK6ghC4TXiEYSr8tmFwstvIwhb2XX+EYR72St+fmEj6htDuBW+a8svPArPauQXnp9e+CI8jZJfKP38mF8ofDnML2wuwsOn2YVX6ena7MKt9PRpduHt6YUr6eHM7MKF9HBmduGr9OvU7MKp9BR4bmEjDcwulJ9zzy2U/+1hbqH0s1N+4afsq8QRhPKT/LmFB+kb7+xC6Tua7ELhdacRhOLPTtmFCv7ZQOY14LP4xWISlh2FqFkM17UF8VPpF7Hjb3HTJl2nSwXAzp5jnqYrhAj1hxCh/hAi1B9ChPpDiFB/CBHqDyFC/SFEqD+ECPWHEKH+ECLUH0KE+kOIUH8IEeoPIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQfwgR6g8hQv0hRKg/hAj1hxCh/hAi1B9ChD36A+1ASVvVoq0WAAAAAElFTkSuQmCC"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jack-jisan-64296b170/" class="mr-1">
+            <i class="fab"><img class="fimg" src="data:image/png;base64,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"></i>
+        </a><br><br><br>
+        <span>Learn with C programing</span><br>
+        <span>Happy coding</span>
+    </div>
+</div>
+<script src="javascript.js"></script>
+</body>
+</html>

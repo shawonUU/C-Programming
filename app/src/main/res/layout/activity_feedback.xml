@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#440404"
+    android:weightSum="20"
+    tools:context=".FeedbackActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:weightSum="20">
+
+        <ImageButton
+            android:id="@+id/backButtonId"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18"
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/emailId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:textColor="#fff"
+            android:hint="Enter your email address"
+            android:textColorHint="#D1CACA"
+            android:textSize="20dp"
+            android:background="@drawable/button_shape"/>
+
+        <EditText
+            android:id="@+id/nameId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:textColor="#fff"
+            android:hint="Enter your name"
+            android:textColorHint="#D1CACA"
+            android:textSize="20dp"
+            android:background="@drawable/button_shape"/>
+
+        <EditText
+            android:id="@+id/feedbackId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingTop="50dp"
+            android:paddingBottom="50dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:hint="Enter your feedback"
+            android:textColorHint="#D1CACA"
+            android:textSize="20dp"
+            android:background="@drawable/button_shape"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:gravity="center">
+            <Button
+                android:id="@+id/clearbuttonId"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="Clear"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_red"/>
+            <Button
+                android:id="@+id/sentbuttonId"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="Sent"
+                android:layout_margin="10dp"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                android:background="@drawable/button_shape"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,291 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="fontawesome.min.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="stylefile.css" />
+
+    <title>Shawon</title>
+</head>
+<body >
+
+<div class="dpd">
+<h1>C Pointers</h1>
+<p>
+    In this tutorial, you'll learn about pointers; what pointers are, how do you use them and the common mistakes you might face when working with them with the help of examples.
+</p>
+<p>Pointers are powerful features of C and C++ programming. Before we learn pointers, let's learn about addresses in C programming.
+</p>
+<hr>
+<h2>Address in C</h2>
+<p>
+    If you have a variable <span id="code" class="templet">var</span> in your program, <span id="code" class="templet">&var</span> will give you its address in the memory.
+</p>
+<p>We have used address numerous times while using the <span id="code" class="templet">scanf()</span> function.
+</p>
+<p id="code" class="templet">scanf("%d", &var);</p>
+<p>Here, the value entered by the user is stored in the address of var variable. Let's take a working example.
+</p>
+<pre id="code" class="codetem">
+    #include < stdio.h >
+    int main()
+    {
+        int var = 5;
+        printf("var: %d\n", var);
+
+        // Notice the use of & before var
+        printf("address of var: %p", &var);
+        return 0;
+    }
+</pre>
+    <h3>Output</h3>
+
+    <pre class="output">
+    var: 5
+    address of var: 2686778
+    </pre>
+    <p>Note: You will probably get a different address when you run the above code.</p>
+<hr>
+
+    <h2>C Pointers</h2>
+<p>    Pointers (pointer variables) are special variables that are used to store addresses rather than values.
+</p>
+    <h2>Pointer Syntax</h2>
+   <p> Here is how we can declare pointers.</p>
+
+    <p id="code" class="templet">int* p;</p>
+    <p>Here, we have declared a pointer <span id="code" class="templet">p</span> of <span id="code" class="templet">int</span> type.</p>
+
+    <p>You can also declare pointers in these ways.</p>
+
+    <p id="code" class="templet">int *p1;
+        int * p2;</p>
+<hr>
+    <p>Let's take another example of declaring pointers.</p>
+
+    <p id="code" class="templet">int* p1, p2;</p>
+   <p> Here, we have declared a pointer <span id="code" class="templet">p1</span> and a normal variable <span id="code" class="templet">p2</span>.</p>
+
+<hr>
+<h2>Assigning addresses to Pointers</h2>
+    <p>Let's take an example.</p>
+
+    <pre id="code" class="codetem">
+        int* pc, c;
+        c = 5;
+        pc =  &c;
+    </pre>
+<p>    Here, <span id="code" class="templet">5</span> is assigned to the <span id="code" class="templet">c</span> variable. And, the address of <span id="code" class="templet">c</span> is assigned to the <span id="code" class="templet">pc</span> pointer.
+</p>
+<hr>
+    <h2>Get Value of Thing Pointed by Pointers</h2>
+    <p>To get the value of the thing pointed by the pointers, we use the <span id="code" class="templet">*</span> operator. For example:</p>
+
+    <pre id="code" class="codetem">
+    int* pc, c;
+    c = 5;
+    pc = &c;
+    printf("%d", *pc);   // Output: 5
+    </pre>
+    <p>Here, the address of <span id="code" class="templet">c</span> is assigned to the <span id="code" class="templet">pc</span> pointer. To get the value stored in that address, we used <span id="code" class="templet">*pc</span>.</p>
+
+    <p>Note: In the above example, <span id="code" class="templet">pc</span> is a pointer, not <span id="code" class="templet">*pc</span>. You cannot and should not do something like <span id="code" class="templet">*pc = &c;</span>
+        <br>
+    By the way, <span id="code" class="templet">*</span> is called the dereference operator (when working with pointers). It operates on a pointer and gives the value stored in that pointer. </p>
+
+<hr>
+    <h2>Changing Value Pointed by Pointers</h2>
+   <p> Let's take an example.</p>
+
+    <pre id="code" class="codetem">
+    int* pc, c;
+    c = 5;
+    pc = &c;
+    c = 1;
+    printf("%d", c);    // Output: 1
+    printf("%d", *pc);  // Ouptut: 1
+    </pre>
+    <p>We have assigned the address of <span id="code" class="templet">c</span> to the <span id="code" class="templet">pc</span> pointer.</p>
+
+<p>    Then, we changed the value of <span id="code" class="templet">c</span> to <span id="code" class="templet">1</span>. Since <span id="code" class="templet">pc</span> and the address of <span id="code" class="templet">c</span> is the same, <span id="code" class="templet">*pc</span> gives us <span id="code" class="templet">1</span>.
+</p>
+    <p>Let's take another example.</p>
+
+    <pre id="code" class="codetem">
+    int* pc, c;
+    c = 5;
+    pc = &c;
+    *pc = 1;
+    printf("%d", *pc);  // Ouptut: 1
+    printf("%d", c);    // Output: 1
+    </pre>
+    <p>We have assigned the address of <span id="code" class="templet">c</span> to the <span id="code" class="templet">pc</span> pointer.</p>
+
+    <p>Then, we changed <span id="code" class="templet">*pc</span> to <span id="code" class="templet">1</span> using <span id="code" class="templet">*pc = 1;</span>. Since <span id="code" class="templet">pc</span> and the address of <span id="code" class="templet">c</span> is the same, <span id="code" class="templet">c</span> will be equal to <span id="code" class="templet">1</span>.</p>
+
+    <p>Let's take one more example.</p>
+
+    <pre id="code" class="codetem">
+    int* pc, c, d;
+    c = 5;
+    d = -15;
+
+    pc = &c; printf("%d", *pc); // Output: 5
+    pc = &d; printf("%d", *pc); // Ouptut: -15
+    </pre>
+
+<p>    Initially, the address of <span id="code" class="templet">c</span> is assigned to the pc pointer using <span id="code" class="templet">pc = &c;</span>. Since <span id="code" class="templet">c</span> is <span id="code" class="templet">5</span>, <span id="code" class="templet">*pc</span> gives us <span id="code" class="templet">5</span>.
+</p>
+    <p>Then, the address of <span id="code" class="templet">d</span> is assigned to the pc pointer using<span id="code" class="templet">pc = &d;</span>. Since <span id="code" class="templet">d</span> is <span id="code" class="templet">-15</span>, <span id="code" class="templet">*pc</span> gives us <span id="code" class="templet">-15</span>.</p>
+<hr>
+    <h2>Example: Working of Pointers</h2>
+    <p>Let's take a working example.</p>
+
+    <pre id="code" class="codetem">
+    #include < stdio.h >
+    int main()
+    {
+    int* pc, c;
+
+    c = 22;
+    printf("Address of c: %p\n", &c);
+    printf("Value of c: %d\n\n", c);  // 22
+
+    pc = &c;
+    printf("Address of pointer pc: %p\n", pc);
+    printf("Content of pointer pc: %d\n\n", *pc); // 22
+
+    c = 11;
+    printf("Address of pointer pc: %p\n", pc);
+    printf("Content of pointer pc: %d\n\n", *pc); // 11
+
+    *pc = 2;
+    printf("Address of c: %p\n", &c);
+    printf("Value of c: %d\n\n", c); // 2
+    return 0;
+    }
+    </pre>
+   <h3> Output</h3>
+
+<pre class="output">
+    Address of c: 2686784
+    Value of c: 22
+
+    Address of pointer pc: 2686784
+    Content of pointer pc: 22
+
+    Address of pointer pc: 2686784
+    Content of pointer pc: 11
+
+    Address of c: 2686784
+    Value of c: 2
+</pre>
+<hr>
+    <h2>Explanation of the program</h2>
+
+    <p>1 . <span id="code" class="templet">int* pc, c;</span></p>
+<img src="data:image/jpeg;base64,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">
+
+    <p>
+        Here, <span id="code" class="templet">a</span> pointer <span id="code" class="templet">pc</span> and <span id="code" class="templet">a</span> normal variable <span id="code" class="templet">c</span>, both of type <span id="code" class="templet">int</span>, is created. <br>
+        Since <span id="code" class="templet">pc</span> and <span id="code" class="templet">c</span> are not initialized at initially, pointer <span id="code" class="templet">pc</span> points to either no address or a random address. And, variable <span id="code" class="templet">c</span> has an address but contains random garbage value.
+    </p>
+
+    <p>2. <span id="code"class="templet">c = 22;</span></p>
+<img src="data:image/jpeg;base64,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">
+
+
+    <p>This assigns <span id="code" class="templet">22</span> to the variable <span id="code" class="templet">c</span> . That is, <span id="code" class="templet">22</span>  is stored in the memory location of variable <span id="code" class="templet">c</span> .</p>
+
+    <p>3. <span id="code" class="templet">pc = &c;</span></p>
+<img src="data:image/jpeg;base64,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">
+
+
+   <p> This assigns the address of variable <span id="code" class="templet">c</span> to the pointer <span id="code" class="templet">pc</span>.</p>
+
+    <p>4. <span id="code" class="templet">c = 11;</span></p>
+<img src="data:image/jpeg;base64,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">
+
+
+    <p>This assigns <span id="code" class="templet">11</span> to variable <span id="code" class="templet">c</span>.</p>
+
+    <p>5. <span id="code" class="templet">*pc = 2;</span></p>
+<img src="data:image/jpeg;base64,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">
+
+
+    <p>This change the value at the memory location pointed by the pointer <span id="code" class="templet">pc</span> to <span id="code" class="templet">2</span>.</p>
+<hr>
+    <h2>Common mistakes when working with pointers</h2>
+    <p>Suppose, you want pointer <span id="code" class="templet">pc</span> to point to the address of <span id="code" class="templet">c</span>. Then,</p>
+
+   <pre id="code" class="codetem">
+    int c, *pc;
+
+    // pc is address but c is not
+    pc = c; // Error
+
+    // &c is address but *pc is not
+    *pc = &c; // Error
+
+    // both &c and pc are addresses
+    pc = &c;
+
+    // both c and *pc values
+    *pc = c;
+   </pre>
+    <p>Here's an example of pointer syntax beginners often find confusing.</p>
+
+    <pre id="code" class="codetem">
+    #include < stdio.h >
+    int main() {
+    int c = 5;
+    int *p = &c;
+
+    printf("%d", *p);  // 5
+    return 0;
+    }
+    </pre>
+    <p>Why didn't we get an error when using <span id="code" class="templet">int *p = &c;</span>?</p>
+
+    <p>It's because</p>
+
+    <p id="code" class="templet">int *p = &c;</p>
+    <p>is equivalent to</p>
+
+    <pre id="code" class="templet">
+    int *p:
+    p = &c;
+    </pre>
+   <p> In both cases, we are creating a pointer <span id="code" class="templet">p</span> (not <span id="code" class="templet">*p</span>) and assigning <span id="code" class="templet">&c</span> to it.</p>
+
+    To avoid this confusion, we can use the statement like this:
+
+    <p id="code" class="templet">int* p = &c;</p>
+<hr>
+<p>    Now you know what pointers are, you will learn how pointers are related to arrays in the next tutorial.
+</p>
+</div>
+<div class="footer">
+    <span>Develop By Mahmodul Hassan Shawon</span><br>
+    <span style="font-size: 10px;">Email: shawonmahmodul12@gmail.com</span>
+    <div class="mt-2">
+        <a href="https://www.facebook.com/profile.php?id=100009231404662"class="mr-1">	<i class="fab"><img class="fimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEU6VZ////82Up4zUJ1UbKx4ibswTpyMmsQ5V6EtTJupss8nSJnN0+WVosgqSpo4U56eqcyDksDj5vBwgbb3+PxFXqNabqt9jb3S2OhidbC9xdy3v9l0hLjZ3etLY6bq7fTEyt4dQpdJYqekrs2uttK97JEgAAADFUlEQVR4nO3c2XLiMBBAUUZmM3IsFsNgSIAk/P83TsLzjCNbI3c3de9rqlw+BV7VZDIhIiIiIiIiIiIiIiIiIlJeCM4VxbzsrJDey8G50s/3h91ss3jp7LdJYii8262rbfPr545eem/753y9qWJwjypzwqJuT7E6i0JX7459fOaEvn3r5zMmLPy5r8+W0L9Gn15MCkO9GuAzJHSh9xFoS1hcrsOAVoTzdsghaEhYTAcDbQjdfjjQhDAshx6DRoShrhKAFoR+nQI0ICzaJKABYZlyEFoQ1p9pQPVCd0m4UJgQ+lsiULvQXVKB2oW+1ysZg8KwTAYqF5ZpF3sDQr99cqFLvJ3RL0y+2usXDnw1Y0YYUh58TQiL3X8Aql57Kvschs3xdF/9pftC8fphj3vSalZ6X5tbA/axJ5rtzhdBem+HVEeeaKq55s+po1DHAW/vJj+/yfdifdxX1OYX9LuwjxIejH5Fv3LTGOBJ8eXup+KEH056P4cXJby+S+9mQlHCUy29mwlFCddz6d1MKEq4sXsmjRTOEGoOIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQR27+78qYucRX37GFR7Jrb65ddBQz1Hbv2sCjpSixvEcgEitlhcN+cNenRnZxagThm+wK6ghC4TXiEYSr8tmFwstvIwhb2XX+EYR72St+fmEj6htDuBW+a8svPArPauQXnp9e+CI8jZJfKP38mF8ofDnML2wuwsOn2YVX6ena7MKt9PRpduHt6YUr6eHM7MKF9HBmduGr9OvU7MKp9BR4bmEjDcwulJ9zzy2U/+1hbqH0s1N+4afsq8QRhPKT/LmFB+kb7+xC6Tua7ELhdacRhOLPTtmFCv7ZQOY14LP4xWISlh2FqFkM17UF8VPpF7Hjb3HTJl2nSwXAzp5jnqYrhAj1hxCh/hAi1B9ChPpDiFB/CBHqDyFC/SFEqD+ECPWHEKH+ECLUH0KE+kOIUH8IEeoPIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQfwgR6g8hQv0hRKg/hAj1hxCh/hAi1B9ChD36A+1ASVvVoq0WAAAAAElFTkSuQmCC"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jack-jisan-64296b170/" class="mr-1">
+            <i class="fab"><img class="fimg" src="data:image/png;base64,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"></i>
+        </a><br><br><br>
+        <span>Learn with C programing</span><br>
+        <span>Happy coding</span>
+    </div>
+</div>
+<script src="javascript.js"></script>
+</body>
+</html>

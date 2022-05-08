@@ -1,0 +1,225 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="fontawesome.min.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="stylefile.css" />
+
+    <title>Shawon</title>
+</head>
+<body >
+<div class="dpd">
+<h1>C Data Types</h1>
+<p>In this tutorial, you will learn about basic data types such as <samp class="templet" id="code">int</samp> , <samp class="templet keyword">float</samp>,<samp class="templet keyword">char</samp>  etc. in C programming.</p>
+
+<span>In C programming, data types are declarations for variables. This determines the type and size of data associated with variables. For example,</span>
+
+<p class="templet"><span id="code">int myVar;</span> </p>
+<P>Here, <span class="templet" id="code">myVar</span> is a variable of <span class="templet" id="code">int</span> (integer) type. The size of <span class="templet keyword">int</span> is 4 bytes.</P>
+
+<h2>Basic types</h2>
+<p>Here's a table containing commonly used types in C programming for quick access.</p>
+<div >
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Size (bytes)</th>
+                <th>Format Specifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><span class="templet" id="code">int</span></td>
+            <td>at least 2, usually 4</td>
+            <td><span class="templet string" >%d</span>,<span class="templet string">%i</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">char</span></td>
+            <td>1</td>
+            <td><span class="templet string">%c</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">float</span></td>
+            <td>4</td>
+            <td><span class="templet string">%f</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">double</span></td>
+            <td>8</td>
+            <td><span class="templet string">%lf</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">short int</span></td>
+            <td>2 usually</td>
+            <td><span class="templet string">%hd</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">unsigned int</span></td>
+            <td>at least 2, usually 4</td>
+            <td><span class="templet string">%u</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">long int</span></td>
+            <td>at least 4, usually 8</td>
+            <td><span class="templet string">%ld</span>, <span class="templet string">%li</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">long long int</span></td>
+            <td>at least 8</td>
+            <td><span class="templet string">%lld</span>, <span class="templet string">%lli</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">unsigned long int</span></td>
+            <td>at least 4</td>
+            <td><span class="templet string">%ul</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">unsigned long long int</span></td>
+            <td>at least 8</td>
+            <td><span class="templet string">%llu</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">signed char</span></td>
+            <td>1</td>
+            <td><span class="templet string">%c</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">unsigned char</span></td>
+            <td>1</td>
+            <td><span class="templet string">%c</span></td>
+        </tr>
+        <tr>
+            <td><span class="templet" id="code">long double</span></td>
+            <td>at least 10, usually 12 or 16</td>
+            <td><span class="templet string">%Lf</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>int</h2>
+<p>Integers are whole numbers that can have both zero, positive and negative values but no decimal values. For example, <span class="templet" id="code">0</span>,<span class="templet" id="code">-5</span>,<span class="templet" id="code">10</span> </p>
+
+<p >We can use <spam class=" templet" id="code">int</spam> for declaring an integer variable.</p>
+
+<p class="templet"><span class="keyword" id="code">int id;</span> </p>
+<p>Here, <span class="templet" id="code">id</span> is a variable of type integer.</p>
+
+<p>You can declare multiple variables at once in C programming. For example,</p>
+
+<p class="templet"><span class="keyword" id="code">int id, age;</span></p>
+<p>The size of <span class="templet" id="code">int</span> is usually 4 bytes (32 bits). And, it can take <span class="templet"><span id="code">2</span><sup id="code">32</sup></span> distinct states from <span class="templet" id="code">-2147483648</span> to <span class="templet" id="code">2147483647</span>.</p>
+
+<h2> <span class=" keyword">float</span> and <span class="keyword">double</span> </h2>
+<p> <span class="keyword templet">float</span> and <span class="keyword templet">double</span> are used to hold real numbers.</p>
+
+<div class="templet">
+    <span id="code">float salary;</span><br>
+    <span id="code">double price;</span>
+</div>
+<p>In C, floating-point numbers can also be represented in exponential. For example,</p>
+
+<span class="templet " ><span id="code">float normalizationFactor = </span> <span class="value">22.442e2</span><span id="code">;</span> </span>
+
+<p>What's the difference between <span class="templet keyword">float</span> and <span class="templet keyword">double</span>?</p>
+
+<p>
+    The size of <span class="templet keyword">float</span> (single precision <span class="templet keyword">float</span> data type) is 4 bytes. And the size of <span class="templet keyword">double</span> (<span class="templet keyword">double</span> precision <span class="templet keyword">float</span> data type) is 8 bytes.
+</p>
+<h2><span class="keyword">char</span></h2>
+<p>Keyword <span class="templet keyword">char</span> is used for declaring character type variables. For example,</p>
+
+<span id="code" class="templet">char test = 'h';</span>
+<p>The size of the character variable is 1 byte.</p>
+
+<h2><span class="keyword">void</span></h2>
+<p><span class="templet keyword">void</span> is an incomplete type. It means "nothing" or "no type". You can think of <span class="templet keyword">void</span> as absent.</p>
+
+For example, if a function is not returning anything, its return type should be <span class="templet keyword">void</span>.
+
+<p>Note that, you cannot create variables of <span class="templet keyword">void</span>  type.</p>
+
+<h2><span class="keyword">short</span> and <span class="keyword">long</span></h2>
+<p>If you need to use a large number, you can use a type specifier <span class="templet keyword">long</span>. Here's how:</p>
+
+<div class="templet">
+    <span id="code">
+     long a;
+     long long b;
+     long double c;
+     </span>
+</div>
+<p>Here variables <span class="templet nocolor">a</span> and <span class="templet nocolor">b</span> can store integer values. And, <span class="templet nocolor">c</span> can store a floating-point number.</p>
+
+<p>If you are sure, only a small integer (<span class="templet" id="code">[−32,767, +32,767]</span> range) will be used, you can use <span class="templet keyword">short</span>.</p>
+
+<span class="templet" id="code">short d;</span>
+<p>You can always check the size of a variable using the <span class="templet" id="code">sizeof()</span> operator.</p>
+<pre id="code" class="codetem">
+    #include< stdio.h >
+    int main(){
+        short a;
+        long b;
+        long long c;
+        long double d;
+        printf("size of short = %d bytes\n",sizeof(a));
+        printf("size of long = %d bytes\n",sizeof(b));
+        printf("size of long long = %d bytes\n",sizeof(c));
+        printf("size of long double = %d bytes\n",sizeof(d));
+        return 0;
+    }
+</pre>
+<hr>
+
+    <h2>signed and unsigned</h2>
+    <p>In C, <span class="templet keyword">signed</span> and <span class="templet keyword">unsigned</span> are type modifiers. You can alter the data storage of a data type by using them. For example,</p>
+
+    <div class="templet">
+        <span id="code">unsigned int x;</span><br>
+        <span id="code">int y;</span>
+    </div>
+    <p>Here, the variable <span class="templet nocolor">x</span> can hold only zero and positive values because we have used the <span class="templet keyword">unsigned</span> modifier.</p>
+
+<p>Considering the size of <span class="templet keyword">int</span> is <span class="templet" id="code">unsigned</span> bytes, variable <span class="templet nocolor">y</span> can hold values from <span class="templet" ><span id="code">-2</span><sup id="code">31</sup></span> to <span class="templet" ><span id="code">2</span id="code"><sup id="code">31</sup><span id="code">-1</span></span>, whereas variable <span class="templet nocolor">x</span> can hold values from <span class="templet"id="code">0</span> to <span class="templet" ><span id="code">2</span><sup id="code">32</sup><span id="code">-1</span></span>.</p>
+<hr>
+   <p> Other data types defined in C programming are:</p>
+    <ul>
+        <li>bool Type</li>
+        <li>Enumerated type</li>
+        <li>Complex types</li>
+        <li>Derived Data Types</li>
+    </ul>
+
+
+<hr>
+
+<p>
+    Data types that are derived from fundamental data types are derived types. For example: arrays, pointers, function types, structures, etc.
+    We will learn about these derived data types in later tutorials.
+</p>
+</div>
+<div class="footer">
+    <span>Develop By Mahmodul Hassan Shawon</span><br>
+    <span style="font-size: 10px;">Email: shawonmahmodul12@gmail.com</span>
+    <div class="mt-2">
+        <a href="https://www.facebook.com/profile.php?id=100009231404662"class="mr-1">	<i class="fab"><img class="fimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEU6VZ////82Up4zUJ1UbKx4ibswTpyMmsQ5V6EtTJupss8nSJnN0+WVosgqSpo4U56eqcyDksDj5vBwgbb3+PxFXqNabqt9jb3S2OhidbC9xdy3v9l0hLjZ3etLY6bq7fTEyt4dQpdJYqekrs2uttK97JEgAAADFUlEQVR4nO3c2XLiMBBAUUZmM3IsFsNgSIAk/P83TsLzjCNbI3c3de9rqlw+BV7VZDIhIiIiIiIiIiIiIiIiIlJeCM4VxbzsrJDey8G50s/3h91ss3jp7LdJYii8262rbfPr545eem/753y9qWJwjypzwqJuT7E6i0JX7459fOaEvn3r5zMmLPy5r8+W0L9Gn15MCkO9GuAzJHSh9xFoS1hcrsOAVoTzdsghaEhYTAcDbQjdfjjQhDAshx6DRoShrhKAFoR+nQI0ICzaJKABYZlyEFoQ1p9pQPVCd0m4UJgQ+lsiULvQXVKB2oW+1ysZg8KwTAYqF5ZpF3sDQr99cqFLvJ3RL0y+2usXDnw1Y0YYUh58TQiL3X8Aql57Kvschs3xdF/9pftC8fphj3vSalZ6X5tbA/axJ5rtzhdBem+HVEeeaKq55s+po1DHAW/vJj+/yfdifdxX1OYX9LuwjxIejH5Fv3LTGOBJ8eXup+KEH056P4cXJby+S+9mQlHCUy29mwlFCddz6d1MKEq4sXsmjRTOEGoOIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQR27+78qYucRX37GFR7Jrb65ddBQz1Hbv2sCjpSixvEcgEitlhcN+cNenRnZxagThm+wK6ghC4TXiEYSr8tmFwstvIwhb2XX+EYR72St+fmEj6htDuBW+a8svPArPauQXnp9e+CI8jZJfKP38mF8ofDnML2wuwsOn2YVX6ena7MKt9PRpduHt6YUr6eHM7MKF9HBmduGr9OvU7MKp9BR4bmEjDcwulJ9zzy2U/+1hbqH0s1N+4afsq8QRhPKT/LmFB+kb7+xC6Tua7ELhdacRhOLPTtmFCv7ZQOY14LP4xWISlh2FqFkM17UF8VPpF7Hjb3HTJl2nSwXAzp5jnqYrhAj1hxCh/hAi1B9ChPpDiFB/CBHqDyFC/SFEqD+ECPWHEKH+ECLUH0KE+kOIUH8IEeoPIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQfwgR6g8hQv0hRKg/hAj1hxCh/hAi1B9ChD36A+1ASVvVoq0WAAAAAElFTkSuQmCC"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jack-jisan-64296b170/" class="mr-1">
+            <i class="fab"><img class="fimg" src="data:image/png;base64,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"></i>
+        </a><br><br><br>
+        <span>Learn with C programing</span><br>
+        <span>Happy coding</span>
+    </div>
+</div>
+<script src="javascript.js"></script>
+</body>
+</html>

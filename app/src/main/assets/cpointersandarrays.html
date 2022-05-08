@@ -1,0 +1,153 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="fontawesome.min.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="stylefile.css" />
+
+    <title>Shawon</title>
+</head>
+<body >
+<div class="dpd">
+<h1>Relationship Between Arrays and Pointers.</h1>
+<p>In this tutorial, you'll learn about the relationship between arrays and pointers in C programming. You will also learn to access array elements using pointers.
+</p>
+<p>Before you learn about the relationship between arrays and pointers, be sure to check these two topics:</p>
+<ul>
+    <li>C Arrays</li>
+    <li>C Pointers</li>
+</ul>
+
+<hr>
+<h2>Relationship Between Arrays and Pointers</h2>
+<p>An array is a block of sequential data. Let's write a program to print addresses of array elements.
+</p>
+<pre id="code" class="codetem">
+    #include < stdio.h >
+    int main() {
+    int x[4];
+    int i;
+
+    for(i = 0; i < 4; ++i) {
+    printf("&x[%d] = %p\n", i, &x[i]);
+    }
+
+    printf("Address of array x: %p", x);
+
+    return 0;
+    }
+</pre>
+    <h3>Output</h3>
+
+   <pre class="output">
+    &x[0] = 1450734448
+    &x[1] = 1450734452
+    &x[2] = 1450734456
+    &x[3] = 1450734460
+    Address of array x: 1450734448
+   </pre>
+<p>
+    There is a difference of 4 bytes between two consecutive elements of array <span id="code" class="templet">x</span>. It is because the size of <span id="code" class="templet">int</span> is 4 bytes (on our compiler).
+</p>
+<p>    Notice that, the address of <span id="code" class="templet">&x[0]</span> and <span id="code" class="templet">x</span> is the same. It's because the variable name <span id="code" class="templet">x</span> points to the first element of the array.
+</p>
+<img src="data:image/jpeg;base64,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">
+
+
+    <p>From the above example, it is clear that <span id="code" class="templet">&x[0]</span> is equivalent to <span id="code" class="templet">x</span>. And,<span id="code" class="templet">x[0]</span> is equivalent to <span id="code" class="templet">*x</span>.</p>
+
+    <p>Similarly,</p>
+
+<ul>
+    <li><span id="code" class="templet">&x[1]</span> is equivalent to <span id="code" class="templet">x+1</span> and <span id="code" class="templet">x[1]</span> is equivalent to <span id="code" class="templet">*(x+1)</span>.</li>
+    <li><span id="code" class="templet">&x[2]</span> is equivalent to <span id="code" class="templet">x+2</span> and <span id="code" class="templet">x[2]</span> is equivalent to <span id="code" class="templet">*(x+2)</span>.</li>
+    <li>Basically, <span id="code" class="templet">&x[i]</span> is equivalent to<span id="code" class="templet">x+1</span> and <span id="code" class="templet">x[i]</span> is equivalent to <span id="code" class="templet">*(x+i)</span>.</li>
+</ul>
+
+<hr>
+   <h2> Example 1: Pointers and Arrays</h2>
+    <pre id="code" class="codetem">
+    #include < stdio.h >
+    int main() {
+    int i, x[6], sum = 0;
+    printf("Enter 6 numbers: ");
+    for(i = 0; i < 6; ++i) {
+    // Equivalent to scanf("%d", &x[i]);
+    scanf("%d", x+i);
+
+    // Equivalent to sum += x[i]
+    sum += *(x+i);
+    }
+    printf("Sum = %d", sum);
+    return 0;
+    }
+    </pre>
+   <h3> When you run the program, the output will be:</h3>
+
+    <pre class="output">
+    Enter 6 numbers:  2
+    3
+    4
+    4
+    12
+    4
+    Sum = 29
+    </pre>
+
+    <p>Here, we have declared an array <span id="code" class="templet">x</span> of 6 elements. To access elements of the array, we have used pointers.</p>
+<hr>
+<p>    In most contexts, array names decay to pointers. In simple words, array names are converted to pointers. That's the reason why you can use pointers to access elements of arrays. However, you should remember that pointers and arrays are not the same.
+</p>
+<hr>
+    <h2>Example 2: Arrays and Pointers</h2>
+   <pre id="code" class="codetem">
+   #include < stdio.h >
+    int main() {
+    int x[5] = {1, 2, 3, 4, 5};
+    int* ptr;
+
+    // ptr is assigned the address of the third element
+    ptr = &x[2];
+
+    printf("*ptr = %d \n", *ptr);   // 3
+    printf("*(ptr+1) = %d \n", *(ptr+1)); // 4
+    printf("*(ptr-1) = %d", *(ptr-1));  // 2
+
+    return 0;
+    }
+   </pre>
+    <h3>When you run the program, the output will be:</h3>
+
+<pre class="output">
+    *ptr = 3
+    *(ptr+1) = 4
+    *(ptr-1) = 2
+</pre>
+<p>    In this example, <span id="code" class="templet">&x[2]</span>, the address of the third element, is assigned to the <span id="code" class="templet">ptr</span> pointer. Hence, <span id="code" class="templet">3</span> was displayed when we printed <span id="code" class="templet">*ptr</span>.
+</p>
+    <p>And, printing <span id="code" class="templet">*(ptr+1)</span> gives us the fourth element. Similarly, printing <span id="code" class="templet">*(ptr-1)</span> gives us the second element.</p>
+</div>
+<div class="footer">
+    <span>Develop By Mahmodul Hassan Shawon</span><br>
+    <span style="font-size: 10px;">Email: shawonmahmodul12@gmail.com</span>
+    <div class="mt-2">
+        <a href="https://www.facebook.com/profile.php?id=100009231404662"class="mr-1">	<i class="fab"><img class="fimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEU6VZ////82Up4zUJ1UbKx4ibswTpyMmsQ5V6EtTJupss8nSJnN0+WVosgqSpo4U56eqcyDksDj5vBwgbb3+PxFXqNabqt9jb3S2OhidbC9xdy3v9l0hLjZ3etLY6bq7fTEyt4dQpdJYqekrs2uttK97JEgAAADFUlEQVR4nO3c2XLiMBBAUUZmM3IsFsNgSIAk/P83TsLzjCNbI3c3de9rqlw+BV7VZDIhIiIiIiIiIiIiIiIiIlJeCM4VxbzsrJDey8G50s/3h91ss3jp7LdJYii8262rbfPr545eem/753y9qWJwjypzwqJuT7E6i0JX7459fOaEvn3r5zMmLPy5r8+W0L9Gn15MCkO9GuAzJHSh9xFoS1hcrsOAVoTzdsghaEhYTAcDbQjdfjjQhDAshx6DRoShrhKAFoR+nQI0ICzaJKABYZlyEFoQ1p9pQPVCd0m4UJgQ+lsiULvQXVKB2oW+1ysZg8KwTAYqF5ZpF3sDQr99cqFLvJ3RL0y+2usXDnw1Y0YYUh58TQiL3X8Aql57Kvschs3xdF/9pftC8fphj3vSalZ6X5tbA/axJ5rtzhdBem+HVEeeaKq55s+po1DHAW/vJj+/yfdifdxX1OYX9LuwjxIejH5Fv3LTGOBJ8eXup+KEH056P4cXJby+S+9mQlHCUy29mwlFCddz6d1MKEq4sXsmjRTOEGoOIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQR27+78qYucRX37GFR7Jrb65ddBQz1Hbv2sCjpSixvEcgEitlhcN+cNenRnZxagThm+wK6ghC4TXiEYSr8tmFwstvIwhb2XX+EYR72St+fmEj6htDuBW+a8svPArPauQXnp9e+CI8jZJfKP38mF8ofDnML2wuwsOn2YVX6ena7MKt9PRpduHt6YUr6eHM7MKF9HBmduGr9OvU7MKp9BR4bmEjDcwulJ9zzy2U/+1hbqH0s1N+4afsq8QRhPKT/LmFB+kb7+xC6Tua7ELhdacRhOLPTtmFCv7ZQOY14LP4xWISlh2FqFkM17UF8VPpF7Hjb3HTJl2nSwXAzp5jnqYrhAj1hxCh/hAi1B9ChPpDiFB/CBHqDyFC/SFEqD+ECPWHEKH+ECLUH0KE+kOIUH8IEeoPIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQfwgR6g8hQv0hRKg/hAj1hxCh/hAi1B9ChD36A+1ASVvVoq0WAAAAAElFTkSuQmCC"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jack-jisan-64296b170/" class="mr-1">
+            <i class="fab"><img class="fimg" src="data:image/png;base64,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"></i>
+        </a><br><br><br>
+        <span>Learn with C programing</span><br>
+        <span>Happy coding</span>
+    </div>
+</div>
+<script src="javascript.js"></script>
+</body>
+</html>
